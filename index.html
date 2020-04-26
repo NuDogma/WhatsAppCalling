@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WaCaller</title>
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/pure-min.css"
+        integrity="sha384-oAOxQR6DkCoMliIh8yFnu25d7Eq/PHS21PClpwjOTeU2jRSq11vu66rf90/cZr47" crossorigin="anonymous">
+    <link rel="icon" type="image/svg+xml" href="Phone_Shiny_Icon.svg" sizes="any">
+    <style>
+        .button-error {
+            background: rgb(202, 60, 60);
+        }
+
+        body {
+            padding: 25px;
+        }
+    </style>
+    <script>
+
+        function call() {
+            var pn = "https://wa.me/34" + document.getElementById("phoneNumber").value;
+
+            window.location.href = pn;
+            //console.log(pn);
+        }
+
+        function reset() {
+            document.getElementById("reset_btn").value = "";
+        }
+
+    </script>
+
+</head>
+
+<body>
+    <div class=".pure-u-1">
+        <form class="pure-form pure-form-aligned">
+            <fieldset>
+                <legend>Calling using WhatsApp without adding contact</legend>
+                <div class="pure-control-group">
+                    <label for="phoneNumber">Phone number</label>
+                    <input type="tel" class="pure-input-rounded" id="phoneNumber" />
+                </div>
+                <div class="pure-controls">
+                    <button type="button" onclick="call()" class="pure-button pure-button-primary">Call</button>
+                    <button type="reset" onclick="reset()"
+                        class="button-error pure-button pure-button-primary">Reset</button>
+                </div>
+            </fieldset>
+        </form>
+
+    </div>
+
+</body>
+
+</html>
